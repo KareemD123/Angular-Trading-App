@@ -6,4 +6,5 @@ export interface Trader {
     dob: string;
     country: string;
     email: string;
+    actions?:any;
 }

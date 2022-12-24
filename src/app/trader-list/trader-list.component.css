@@ -5,3 +5,7 @@ table {
     box-shadow: 15px;
     background-color: white;
 }
+
+a {
+    margin-left: 10px;
+}
