@@ -1,0 +1,17 @@
+.main-form {
+    width: 97%;
+}
+
+.main-form *, input {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+.mat-form-field-infix.ng-tns-c54-1 {
+    border-top: 0px !important;
+}
+
+.form-actions {
+    width: 100%;
+}

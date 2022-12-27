@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { TraderListService } from './trader-list.service';
 import { Trader } from './trader';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-trader-list',
   templateUrl: './trader-list.component.html',
@@ -17,6 +18,7 @@ export class TraderListComponent implements OnInit {
   columns:string[] = [];
   faTrashAlt = faTrashAlt;
   faInfoCircle=faInfoCircle;
+  faPlusCircle=faPlusCircle
 
   trader:Trader = {
     key: '',
@@ -47,7 +49,7 @@ export class TraderListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TraderListFormComponent, {
-      width: '350px',
+      width: '40vw',
       data: {
         key: this.trader.key,
         id: this.trader.id,

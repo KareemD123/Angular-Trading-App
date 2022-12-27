@@ -1,7 +1,8 @@
 
 
-
-<button mat-raised-button (click)="openDialog()">Add new Trader</button>
+<div class="new-trader-container">
+    <button mat-raised-button color="primary" (click)="openDialog()"><fa-icon [icon]="faPlusCircle"></fa-icon> Add new Trader</button>
+</div>
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

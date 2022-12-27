@@ -1,4 +1,4 @@
-<div mat-dialog-content>
+<div mat-dialog-content class="main-form">
   <p>First Name:</p>
   <mat-form-field>
     <input matInput [(ngModel)]="data.firstName">
@@ -20,7 +20,7 @@
     <input matInput [(ngModel)]="data.country">
   </mat-form-field>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions class="form-actions">
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { QuotesService } from './quotes/quotes.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { QuotesComponent } from './quotes/quotes.component';
+import { QuotesListComponent } from './quotes-list/quotes-list.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { QuotesComponent } from './quotes/quotes.component';
     TraderListComponent,
     TraderListFormComponent,
     ProfileComponent,
-    QuotesComponent
+    QuotesComponent,
+    QuotesListComponent
   ],
   imports: [
     FormsModule,
+    MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
@@ -39,7 +43,7 @@ import { QuotesComponent } from './quotes/quotes.component';
     BrowserAnimationsModule,
     FontAwesomeModule
   ],
-  providers: [TraderListService],
+  providers: [TraderListService, QuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

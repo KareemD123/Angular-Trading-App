@@ -9,3 +9,16 @@ table {
 a {
     margin-left: 10px;
 }
+
+.new-trader-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+}
