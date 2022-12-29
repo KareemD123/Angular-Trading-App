@@ -1,1 +1,34 @@
-<p>profile works!</p>
+<p>Trader Account</p>
+<div class="profile-container">
+    <div class="info-container">
+        <div>
+            <label for="">First Name</label>
+            <section class="first-name-section">{{ trader.firstName }}</section>
+        </div>
+        <div>
+            <label for="">Last Name</label>
+            <section class="last-name-section">{{ trader.lastName }}</section>
+        </div>
+        <div>
+            <label for="">Email</label>
+            <section class="email-section">{{ trader.email }}</section>
+        </div>
+        <div>
+            <label for="">Date Of Birth</label>
+            <section class="dob-section">{{ trader.dob }}</section>
+        </div>
+        <div>
+            <label for="">Country</label>
+            <section class="country-section">{{ trader.country }}</section>
+        </div>
+    </div>
+    <div class="amount-container">
+        <p>Amount</p>
+        <section class="amount">${{ trader.amount }}</section><br>
+        <input type="number" [(ngModel)]="amount"><br><br>
+        <div class="buttons">
+            <button mat-raised-button color="primary" class="withdraw-btn" (click)="withdrawFunds()">Withdraw Funds</button>
+            <button mat-raised-button color="primary" class="deposit-btn" (click)="depositFunds()">Deposit Funds</button>
+        </div>
+    </div>
+</div>

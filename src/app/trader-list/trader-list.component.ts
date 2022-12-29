@@ -27,15 +27,17 @@ export class TraderListComponent implements OnInit {
     lastName: '',
     dob: '',
     country: '',
-    email: ''
+    email: '',
+    amount: 0
   }
 
   constructor(private _traderList: TraderListService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    let traderDataSource = this._traderList.getDataSource();
+    this._traderList.getDataSource().subscribe(traderDataSource => {
+      this.dataSource = traderDataSource;
+    });
     let traderColumns = this._traderList.getColumns();
-    this.dataSource = traderDataSource;
     this.columns = traderColumns;
   }
 
@@ -68,9 +70,13 @@ export class TraderListComponent implements OnInit {
           //this.ngOnInit()
           console.log(result)
           let traderDataSource = this._traderList.getDataSource();
+          this._traderList.getDataSource().subscribe(traderDataSource => {
+            this.dataSource = traderDataSource
+            // this.dataSource = traderDataSource;
+          })
+          
           let traderColumns = this._traderList.getColumns();
-          this.dataSource = traderDataSource;
-            this.columns = traderColumns;
+          this.columns = traderColumns;
         })
       }
     })

@@ -18,7 +18,8 @@ export class TraderListFormComponent {
     lastName: '',
     dob: '',
     country: '',
-    email: ''
+    email: '',
+    amount: 0
   }
 
 

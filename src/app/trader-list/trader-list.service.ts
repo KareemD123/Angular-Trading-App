@@ -1,6 +1,6 @@
 import { renderFlagCheckIfStmt } from '@angular/compiler/src/render3/view/template';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Trader } from './trader';
 
 @Injectable({
@@ -17,6 +17,7 @@ export class TraderListService {
       dob: new Date().toLocaleDateString(),
       country: 'Canada',
       email: 'mike@test.com',
+      amount: 0,
       actions: `<button (click)="deleteTrader">Delete Trader</button>`
     },
     {
@@ -27,7 +28,8 @@ export class TraderListService {
         dob: new Date().toLocaleDateString(),
         country: 'Austria',
         email: 'hellen@test.com',
-        actions: 'delete'
+        actions: 'delete',
+        amount: 0
     }
   ]
 
@@ -37,8 +39,8 @@ export class TraderListService {
     return Math.floor(Math.random() * 999) + 30
   }
 
-  getDataSource(): Trader[]{
-    return this.traderList
+  getDataSource(): Observable<Trader[]>{
+    return of(this.traderList)
   }
 
   deleteTrader(traderId:number): void {
@@ -48,6 +50,36 @@ export class TraderListService {
       this.traderList.splice(index, 1)
     }
 
+  }
+
+  getTrader(id:number): Observable<any> {
+    let trader: any = this.traderList.find(t => t.id == id)
+    console.log('service' , trader, id)
+    return of(trader)
+  }
+
+  depositFunds(id:number, amount:number): Observable<any> {
+    this.traderList.forEach(t => {
+      if (t.id == id) {
+        t.amount += amount
+        return of({message: 'Deposit Successful'})
+      } else {
+        return of(1)
+      }
+    })
+    return of({message: 'Deposit Unsuccessful'})
+  }
+
+  withdrawFunds(id:number, amount:number): Observable<any> {
+    this.traderList.forEach(t => {
+      if (t.id == id && t.amount >= 0) {
+        t.amount -= amount
+        return of({message: 'Withdraw Successful'})
+      } else {
+        return of(1)
+      }
+    })
+    return of({message: 'Withdraw Unsuccessful'})
   }
 
   createTrader(newTrader:Trader): Promise<any> {

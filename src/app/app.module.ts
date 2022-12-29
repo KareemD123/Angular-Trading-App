@@ -19,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [TraderListService, QuotesService],
   bootstrap: [AppComponent]
