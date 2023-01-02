@@ -2,15 +2,15 @@
   <div mat-dialog-content class="main-form">
     <p>First Name:</p>
     <mat-form-field>
-      <input matInput [(ngModel)]="data.firstName">
+      <input matInput [(ngModel)]="data.firstName" placeHolder="John">
     </mat-form-field>
     <p>Last Name:</p>
     <mat-form-field>
-      <input matInput [(ngModel)]="data.lastName">
+      <input matInput [(ngModel)]="data.lastName" placeholder="Doe">
     </mat-form-field>
     <p>Email</p>
     <mat-form-field>
-      <input matInput [(ngModel)]="data.email">
+      <input matInput [(ngModel)]="data.email" placeholder="john.doe@gmail.com">
     </mat-form-field>
     <p>Date of Birth:</p>
     <mat-form-field>
@@ -18,7 +18,7 @@
     </mat-form-field>
     <p>Country:</p>
     <mat-form-field>
-      <input matInput [(ngModel)]="data.country">
+      <input matInput [(ngModel)]="data.country" placeholder="Canada">
     </mat-form-field>
   </div>
   <div mat-dialog-actions class="form-actions">
