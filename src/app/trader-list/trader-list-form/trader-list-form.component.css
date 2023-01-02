@@ -1,9 +1,19 @@
+.popup-form {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
 .main-form {
-    width: 97%;
+    width: 100%;
+    margin: 0;
+    /* width: fit-content; */
 }
 
 .main-form *, input {
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -13,5 +23,7 @@
 }
 
 .form-actions {
-    width: 100%;
+    margin: 0 auto;
+    display: flex; 
+    justify-content: flex-end;
 }

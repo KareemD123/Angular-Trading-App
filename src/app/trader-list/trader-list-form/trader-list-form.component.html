@@ -1,26 +1,28 @@
-<div mat-dialog-content class="main-form">
-  <p>First Name:</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.firstName">
-  </mat-form-field>
-  <p>Last Name:</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.lastName">
-  </mat-form-field>
-  <p>Email</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.email">
-  </mat-form-field>
-  <p>Date of Birth:</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.dob">
-  </mat-form-field>
-  <p>Country:</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.country">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions class="form-actions">
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+<div class="popup-form">
+  <div mat-dialog-content class="main-form">
+    <p>First Name:</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.firstName">
+    </mat-form-field>
+    <p>Last Name:</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.lastName">
+    </mat-form-field>
+    <p>Email</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.email">
+    </mat-form-field>
+    <p>Date of Birth:</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.dob">
+    </mat-form-field>
+    <p>Country:</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.country">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="form-actions">
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  </div>
 </div>
