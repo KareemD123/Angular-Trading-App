@@ -44,6 +44,7 @@ export class TraderListComponent implements OnInit {
   deleteTrader(event: Event, id:number): void {
     try {
       this._traderList.deleteTrader(id)
+      this.ngOnInit();
     } catch (err) {
       console.log(err)
     }

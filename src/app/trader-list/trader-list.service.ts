@@ -44,7 +44,7 @@ export class TraderListService {
   }
 
   deleteTrader(traderId:number): void {
-    debugger
+    // debugger
     const index:number = this.traderList.findIndex(t => t.id == traderId)
     if (index > -1) {
       this.traderList.splice(index, 1)
