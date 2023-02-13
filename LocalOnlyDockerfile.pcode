@@ -1,0 +1,21 @@
+# Set up Angular project in Docker locally
+
+# Pull node image
+FROM node:14.15.4 as build
+
+# Set working directory inside container
+WORKDIR /app
+
+# Set environment variables
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Copy config and begin setup
+COPY package.json /app/package.json
+RUN npm install -g @angular/cli@12
+RUN npm install
+
+#Copy source code from current directory to container directory (/app)
+COPY . .
+
+# Start command
+CMD ng serve --host 0.0.0.0
